@@ -1,0 +1,20 @@
+{
+  "name": "chatbotjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@grammyjs/storage-free": "^2.5.0",
+    "dotenv": "^16.4.7",
+    "googleapis": "^146.0.0",
+    "grammy": "^1.35.0",
+    "nodemailer": "^6.10.0",
+    "nodemon": "^3.1.9"
+  }
+}
