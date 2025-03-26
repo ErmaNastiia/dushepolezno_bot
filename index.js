@@ -13,9 +13,7 @@ const { freeStorage } = require('@grammyjs/storage-free');
 // Initialize the bot
 const bot = new Bot(process.env.BOT_API_KEY);
 
-const express = require('express')
-const app = express()
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 10000;
 
 
 const oAuth2Client = new google.auth.OAuth2(
