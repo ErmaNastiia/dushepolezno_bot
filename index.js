@@ -5,6 +5,8 @@ const {
   session,
   HttpError,
   InlineKeyboard,
+  adminBot,
+  api,
 } = require('grammy');
 const { google } = require('googleapis');
 const { OAuth2 } = google.auth;
@@ -13,13 +15,15 @@ const { freeStorage } = require('@grammyjs/storage-free');
 // Initialize the bot
 const bot = new Bot(process.env.BOT_API_KEY);
 
-const PORT = process.env.PORT || 5000;
+const calender = process.env.CALENDAR_ID;
+const email = process.env.ADMIN_EMAIL;
+const client = process.env.CLIENT_ID;
+const secret = process.env.CLIENT_SECRET;
+const uri = process.env.REDIRECT_URI;
+const token = process.env.REFRESH_TOKEN;
+const user = process.env.EMAIL_USER;
+const pass = process.env.EMAIL_PASSWORD;
 
-const oAuth2Client = new google.auth.OAuth2(
-  process.env.CLIENT_ID,
-  process.env.CLIENT_SECRET,
-  process.env.REDIRECT_URI
-);
 oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
 const calendar = google.calendar({
   version: 'v3',
