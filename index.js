@@ -15,7 +15,7 @@ const bot = new Bot(process.env.BOT_API_KEY);
 
 const PORT = process.env.PORT || 5000;
 
-bot.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 });
 
