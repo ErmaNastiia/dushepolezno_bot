@@ -12,9 +12,22 @@ const { google } = require('googleapis');
 const { OAuth2 } = google.auth;
 // const nodemailer = require('nodemailer');
 const { freeStorage } = require('@grammyjs/storage-free');
+// const express = require('express');
+// const app = express();
+// const PORT = process.env.PORT || 8080;
+
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 8080;
+const port = 8080;
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Example app listening at http://0.0.0.0:${port}`);
+});
+
 // Initialize the bot
 
 
@@ -591,12 +604,12 @@ bot.catch(err => {
   }
 });
 // Add a health check route for deployment platforms
-app.get('/', (req, res) => {
-  res.send('Bot is running');
-});
+// app.get('/', (req, res) => {
+//   res.send('Bot is running');
+// });
 
-// Start the Express server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// // Start the Express server
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
 bot.start();
