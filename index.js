@@ -591,7 +591,7 @@ app.get('/', (req, res) => {
 });
 
 // Start the Express server
-app.listen(8080, () => {
-  console.log(`Server running on port ${8080}`);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
 bot.start();
