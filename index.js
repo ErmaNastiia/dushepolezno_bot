@@ -12,20 +12,13 @@ const { google } = require('googleapis');
 const { OAuth2 } = google.auth;
 // const nodemailer = require('nodemailer');
 const { freeStorage } = require('@grammyjs/storage-free');
-// const express = require('express');
-// const app = express();
-// const PORT = process.env.PORT || 8080;
-// Initialize the bot
-import express from 'express';
+const express = require('express');
 const app = express();
+const PORT = process.env.PORT || 8080;
+// Initialize the bot
 
-app.get('/', (req, res) => {
-  const name = process.env.NAME || 'World';
-  res.send(`Hello ${name}!`);
-});
 
-const port = parseInt(process.env.PORT) || 4020;
-app.listen(port, () => {
+
   console.log(`helloworld: listening on port ${port}`);
 });
 const bot = new Bot(process.env.BOT_API_KEY);
@@ -597,13 +590,13 @@ bot.catch(err => {
     console.error('Unknown error', e);
   }
 });
-// // Add a health check route for deployment platforms
-// app.get('/', (req, res) => {
-//   res.send('Bot is running');
-// });
+// Add a health check route for deployment platforms
+app.get('/', (req, res) => {
+  res.send('Bot is running');
+});
 
-// // Start the Express server
-// app.listen(PORT, () => {
-//   console.log(`Server running on port ${PORT}`);
-// });
+// Start the Express server
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 bot.start();
