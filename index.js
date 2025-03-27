@@ -14,7 +14,7 @@ const { OAuth2 } = google.auth;
 const { freeStorage } = require('@grammyjs/storage-free');
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || $PORT;
+const PORT = process.env.PORT || 8080;
 // Initialize the bot
 const bot = new Bot(process.env.BOT_API_KEY);
 
@@ -591,7 +591,7 @@ app.get('/', (req, res) => {
 });
 
 // Start the Express server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(8080, () => {
+  console.log(`Server running on port ${8080}`);
 });
 bot.start();
